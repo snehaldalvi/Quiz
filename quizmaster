@@ -1,0 +1,36 @@
+# first.py
+class quiz:
+	"""docstring for question"""
+	def __init__(self,prompt,answer):
+		self.prompt=prompt
+		self.answer=answer
+    
+#second.py
+
+from Question import Question
+
+question_prompt=[
+	"what is the capital of india?\n(a)New Delhi\n(b)Mumbai\n(c)Banglore\n",
+	"who invented steam engine?\n(a)charles babage\n(b)thomas savery\n(c)james newmann\n",
+	"what is the capital of cambodia?\n(a)Bangkok\n(b)Phnom Penh\n(c)Vientiane\n",
+	"what is the capital of australia?\n(a)sydney\n(b)perth\n(c)canberra\n"
+]
+
+questions=[
+	Question(question_prompt[0],"a"),
+	Question(question_prompt[1],"b"),
+	Question(question_prompt[3],"b"),
+	Question(question_prompt[3],"c"),
+
+]
+
+def run_test(questions):
+	marks=0
+	for a in questions:
+		answer=input(a.prompt)
+		if(answer==a.answer):
+			marks=marks+1
+	print("you have scorred "+str(marks)+"/"+str(len(questions)))
+
+run_test(questions)
+		
